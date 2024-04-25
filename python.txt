@@ -1,0 +1,643 @@
+1) Python Data Types
+Ans)
+Numeric = int, float, complex
+String = string
+Sequence = list,tuple,range
+Binary = bytes,bytearray,memorryview
+Mapping = dictionary
+Boolean = boolean
+Set = set,frozenset
+None = NoneType
+
+2. String is an ordered sequence of Unicode characters
+var = "Welcome To TutorialsPoint"
+print(type(var)) o/p: <class 'str'>
+
+3) Django architecture
+Ans) 
+Models: It describes database schema and data structure.
+------
+Views: It controls what a user sees, the view retrieves data from appropriate models 
+------     and executes any calculation made to the data and pass it to the template.
+Templates: It determines how the user sees it. It describes how the data received from 
+----------     the views should be changed or formatted for display on the page.
+
+4) Second Largest Number in Python
+Ans)
+data = [2, 5, 2, 4, 6, 8, 3, 6, 6, 9, 7]
+sorted_data = sorted(data)
+print("Second Largest number:", sorted_data[-2])  # o/p: Second Largest number: 8
+print("First Largest number:", sorted_data[-1]) # o/p: First Largest Number:9     
+
+5) What is Decorators ?
+Ans)
+  A decorator is a function that takes another function as an argument and adds functionality 
+    or augments the function without changing it. 
+ These built-in decorators are used when decorating function-based views.
+syntax:
+---------
+@decorator_name
+example:
+------------
+def my_decorator(func):
+   def wrapper():
+       print("Something is happening before the function is called.")
+       func()
+       print("Something is happening after the function is called")
+    return wrapper
+    
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+6) How to convert a list to a tuple ?
+Ans)
+my_list=['list1','list2','list3','list4','list5','list6']
+my_tuple = tuple(my_list)
+print(my_tuple)        o/p: ('list1', 'list2', 'list3', 'list4', 'list5', 'list6')
+print(type(my_tuple))  o/p: <class 'tuple'>
+
+7) Explain Django’s Request / Response Cycle.
+Ans)
+• A request is received by the Django server.
+• The server looks for a matching URL in the urlpatterns defined for the project.
+• If no matching URL is found, then a response with 404 status code is returned. 
+• If a matching URL is found, the corresponding code in the view file associated with the URL is executed.
+• The executed code in the view builds and sends a response back to the client.
+
+8) How to get dictionary values and in list ?
+Ans)
+data = {'manoja': 'java', 'tripura': 'python', 'manoj': 'statistics', 'manoji': 'cpp'}
+# get keys
+print(list(data.keys()))     o/p : ['manoja', 'tripura', 'manoj', 'manoji']
+# get values
+print(list(data.values()))   o/p : ['java', 'python', 'statistics', 'cpp']
+
+9) What is Middleware and use of Middleware in django ?
+Ans)
+Middleware Definition:
+-----------------------
+• Middleware is a layer in Django's Request/Response processing pipeline.
+• Each middleware is responsible for specific functions on the request and/or response, like caching or Gzipping.
+Use of Middleware:
+-----------------------
+• Middleware in Django is a lightweight plugin processing requests and responses.
+• Performs functions like security, CSRF protection, session management, and authentication.
+• Django supports various built-in middleware for common tasks.
+
+Example Middleware:
+-------------------
+class MyCustomMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        # Code to execute before the view is called
+        response = self.get_response(request)
+        # Code to execute after the view is called
+        return response
+
+MIDDLEWARE = [
+  'path.to.MyCustomMiddleware',
+]
+
+10) list = [1, 2, 3, 4, 5]
+    print(list[::-1])  o/p: [5, 4, 3, 2, 1]
+
+11) What is Django ORM ?
+Definition:
+----------
+Django ORM (Object-Relational Mapping) is a database abstraction API in Django.
+Allows interaction with database models, performing actions like add, delete, modify, and query objects.
+
+12) What is difference between mutable and immutable objects
+Mutable
+--------
+• Mutable Can be modified after creation.
+• Mutable slower to access
+• Mutable consumes more memory due to mutability.
+• Dictionary, Sets, Lists
+
+  Example:
+  --------
+    Dictionary : 
+    -------------
+        country_capitals = {
+            "United States": "Washington D.C.", 
+            "Italy": "Rome", 
+            "England": "London"
+        }
+   
+    Sets : 
+    -------
+      my_set = {1,2,3,4,5,6}
+      print(my_set)
+      o/p: {1,2,3,4,5,6}
+
+    List :
+    -------
+      age = [1,2,3,4,5,6]
+      print(age)
+      o/p : [1,2,3,4,5,6] 
+   
+Immutable
+----------
+• Immutable Cannot be modified after creation.
+• Immutable quicker to access
+• Immutable consumes less memory.
+• str, tuple,Int,float, bool, frozenset, bytes
+
+    > Lists,tuple,str,bytes = Ordered
+    > Dictionary,Sets,frozenset = Unordered
+
+13) d = {"a":10, "b":20, "c":10, "a":100} 
+   print(d)
+   o/p : {"a":10, "b":20, "c":10}
+
+14) Difference Between List and Tuple
+Ans
+---
+List
+------
+• Syntax: list_1 = [10, ‘Chelsea’, 20]
+• Lists are mutable i.e they can be edited.
+• Lists are slower than tuples.
+• Lists Consume more memory.
+• Lists have several built-in methods
+• The List is better for performing operations, such as insertion and deletion
+
+Tuple
+------
+• Syntax: tup_1 = (10, "Chelsea", 20)
+• Tuples are immutable (tuples are lists which can't be edited).
+• Tuples are faster than list.
+• Tuple consumes less memory
+• Tuple does not have many built-in methods
+• Tuple data type is well-suited for element access.
+
+15) Remove duplicate elements from list: 
+    my_list = [1, 2, 1, 3, 2, 3, 1, 4, 5]
+    print(set(my_list))  0/p: {1, 2, 3, 4, 5}
+
+16) Difference between SQL and NOSQL 
+SQL
+-------
+• SQL databases are categorized as Relational Database Management System (RDBMS).
+• SQL databases have fixed or static or predefined schema.
+• SQL databases are vertically scalable.
+• SQL databases display data in form of tables so it is known as table-based database.
+• SQL databases are best suited for complex queries.
+• MySQL, Oracle, Sqlite, PostgreSQL and MS-SQL etc. are the example of SQL database.
+
+NOSQL
+-------
+• NoSQL databases are categorized as Non-relational or distributed database system
+• NoSQL databases have dynamic schema.
+• NoSQL databases are horizontally scalable.
+• NoSQL databases display data as collection of key-value pair, documents, graph databases or wide-column stores.
+• NoSQL databases are not so good for complex queries because these are not as powerful as SQL queries.
+• MongoDB, BigTable, Redis, RavenDB, Cassandra, Hbase, Neo4j, CouchDB etc. are the example of nosql database
+
+17) How can you find common elements and uncommon elements in two lists using Python ?
+    list1 = [1, 2, 3, 4, 5]
+    list2 = [3, 4, 5, 6, 7]
+    # common elements
+    ce = set(list1).intersection(list2)
+    print("common elements:",ce) O/P : common elements: {3, 4, 5}
+    # uncommon elements
+    uce = set(list1).symmetric_difference(list2)
+    print("Uncommon elements:", uce) O/P : Uncommon elements: {1, 2, 6, 7}
+
+18) What is a Python interpreter
+Ans) The Python interpreter is a program that executes Python code.
+      It reads and interprets Python scripts or commands line by line and carries out the instructions.
+
+19) What is the Python map() function?
+Ans) The map() function executes a specified function for each item in a given iterable (list, tuple etc). 
+         The item is sent to the function as a parameter.
+Syntax:
+---------
+map(function, iterable)
+parameters:
+-----------
+function: It is a function in which a map passes each item of the iterable.
+iterable: It is a sequence, collection or an iterator object which is to be mapped.
+Example:
+-----------
+# Python example program for map() function
+
+def Square(n):
+    return n**2
+numbers = [10, 20, 30, 40, 50, 60]
+result = map(Square, numbers)
+print(list(result));  # o/p: [100, 400, 900, 1600, 2500, 3600]
+
+20) What is Python Lambda ?
+Ans) A Lambda function is small anonymous function.
+      A Lambda function can take any number of arguments but can only have one expression. 
+      syntax:
+      -------
+      lambda argument:expression
+      Example:
+      ----------
+      x = lambda a:a+10
+      print(x(5))
+
+21) What is namespace in Python ?
+Ans) A namespace is a naming system used to make sure that names are unique to avoid naming conflicts. 
+
+22) csv and pdf file librarys in Python
+Ans) > import csv or import pandas as pd
+     > import PyPDF2 and from fpdf import FPDF
+
+23) What is serialization in Django
+Ans) Serialization is the process of converting Django models into other formats such as XML, JSON, etc. 
+
+24) Explain Q objects in Django ORM 
+Ans) When writing complex queries, Q objects are employed because filter () functions only allow you to 'AND' the conditions;
+       whereas Q objects allow you to 'OR' the conditions.
+       example:
+       --------
+          from django.db.models import Q
+
+          q1 = Q(name__startwith='A')
+          q2 = Q(age__gte=18)
+          
+          # AND operation
+          result = YourModel.objects.filter(q1 & q2)
+
+          # OR operation
+          result = YourModel.objects.filter(q1 | q2)
+
+25) Explain the migration in Django and Explain the use of ‘migrate’ command in Django ?
+Ans) 
+Migration in Django is to make changes to models like deleting a model, adding a field, etc. into database schema. 
+There are several commands you use to interact with migrations.
+•	Migrate
+•	Makemigrations		
+•	Sqlmigrate
+To do the migration in SQL, you have to print the SQL statement for resetting sequences for a given app name.
+django-admin.py sqlsequencereset
+Use this command to generate SQL that will fix cases where a sequence is out sync with its automatically incremented field data.
+
+migrate:
+-------
+• The migrate command is basically used to apply or unapply migrations changes made to the models.
+• This command basically synchronizes the current set of models and migrations with the database state.
+• We can use this command with or without parameters.
+• In case you do not specify any parameter, all apps will have all their migrations running.
+
+26) What is rest api in python ?
+Ans) REST API stands for Representational State Transfer Application Programming Interface.
+      It is a way for two pieces of software to communicate with each other.
+      REST APIs are used to create "web services" in HTTP requests, which provide data between client and server applications.
+      HTTP methods used in RESTful APIs:
+      ----------------------------------
+      GET: Used to retrieve data from a specified resource.
+      POST: Used to submit data to be processed to a specified resource.
+      PUT: Used to update a current resource with new data.
+      DELETE: Used to request the removal of a resource.
+      PATCH: Used to apply partial modifications to a resource.
+      HEAD: Similar to GET but used to retrieve only the headers, not the actual data.
+      OPTIONS: Used to describe the communication options for the target resource.
+      TRACE: Used to perform a message loop-back test along the path to the target 
+
+27) What is Json ?
+Ans)
+Data Interchange Format: JSON (JavaScript Object Notation) is a lightweight data interchange format used for structuring and transmitting
+-------------------------       data between a server and a client.
+Human-Readable and Machine-Readable: It is easy for both humans to read and write, and for machines to parse and generate.
+------------------------------------     The format is text-based and consists of key-value pairs.
+Widely Used in Web Development: JSON is commonly used in web development for APIs (Application Programming Interfaces) to exchange data between a web server and a client, 
+------------------------------      and it is supported by many programming languages.
+
+28). How you can create a project in Django
+Ans)
+django-admin startproject projectName
+py manage.py startapp appName
+
+29) What are the features available in Django?
+Ans)
+• Admin Interface (CRUD)
+• Templating
+• Form handling
+• Internationalization and Localization
+• Session, user management, role-based permissions
+• Object-relational mapping (ORM)
+• Testing Framework
+• Fantastic Documentation
+• Middleware Support
+• Security Features
+• Testing Support
+
+30) What is index in database ?
+Ans) 
+• The index is a type of data structure. It is used to locate and access the data in a database table quickly.
+• Indexing is used to optimize the performance of a database by 
+        minimizing the number of disk accesses required when a query is processed.
+
+31) What is useState hook ?
+Ans) `useState` is a React Hook that lets you add a state variable to your component 
+        which returns an array with exactly two values.
+        1) Current State
+        2) Set Function
+        syntax:
+        ---------
+        const [age, setage] = useState(28);
+
+32) What is useEffect hook ?
+Ans) `useEffect` is a React hook that lets you perform side-effects in the component.
+       Side effect basically is an action which connects the components to the outside wold
+       Syntax:
+       -------
+         import React, {useEffect} from 'react';
+         useEffect(() => {
+          // Side effect code
+          return () => {
+            // Cleanup code (optional)
+          };
+        }, [dependencies]);
+
+33) How many ways to pass data from one component to another in Next.js 14
+Ans)
+1. Props
+2. Context API
+3. Query Parameters
+4. State Management Library (Redux)
+5. URL Parameters
+6. Custom Events
+
+34) Nextjs hook list
+Ans) 
+1. useEffect
+2. useState
+3. useContext
+4. useReducer
+5. useCallback
+6. useMemo
+7. useRef
+8. useRouter
+
+35) What is server-side rendering (SSR) and how does it work in Next.js?
+Ans) SSR is a technique where the HTML for a web page is generated on the server and then sent to the client. 
+     This can improve the performance of your web application by reducing the amount of JavaScript that needs to be executed on the client. 
+     Next.js implements SSR by using the getInitialProps() method.
+     This method is called on the server before the page is rendered and can be used to fetch data and generate the HTML for the page.
+
+36) What is static site generation (SSG) and how does it differ from SSR?
+Ans) SSG is a technique where the HTML for a web page is generated at build time and then served to the client on demand.
+     This can improve the performance of your web application by reducing the amount of work that needs to be done on the server.
+     Next.js implements SSG by using the getStaticProps() method.
+     This method is called at build time and can be used to fetch data and generate the HTML for the page.
+
+37)Authentication in REST APIs Types
+Ans)
+1)HTTP Basic Authentication 2)HTTP Digest Authentication 3)Token-Based Authentication (JWT)
+4)OAuth 2.0 5)Token-Based Authentication with Session Cookies 6)API Keys 7)Biometric Authentication
+
+1. Basic Authentication:
+     Involves sending a username and password with each request, but can be less secure without encryption.
+2. Token Authentication:
+    Uses generated tokens, like JSON Web Tokens (JWT), exchanged between client and server, offering enhanced security without sending login credentials with each request.
+3. OAuth Authentication:
+    Enables third-party limited access to user resources without revealing credentials by issuing access tokens after user authentication.
+4. API Key Authentication:
+    Assigns unique keys to users or applications, sent in headers or parameters; while simple, it might lack the security features of token-based or OAuth methods.
+
+38) Example of prefetch_related and select_related
+Ans)
+prefetch_related:
+--------------------
+# models.py
+from django.db import models
+
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+class Article(models.Model):
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    categories = models.ManyToManyField(Category)
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    publication_date = models.DateField()
+
+select_related
+---------------
+# ForeignKey and OneToOneField relationships
+article = Article.objects.select_related('author').get(pk=1)
+
+# ManyToMany and reverse ForeignKey/OneToOneField relationships
+article = Article.objects.prefetch_related('categories').get(pk=1)
+
+article = Article.objects.select_related('author').prefetch_related('categories').get(pk=1)
+
+39)Django, the relationships OneToOneField, ForeignKey (ManyToOne), and ManyToManyField
+Ans)
+OneToOneField:
+--------------
+from django.db import models
+
+class Person(models.Model):
+    name = models.CharField(max_length=150)
+
+class Profile(models.Model):
+    bio = models.TextField()
+    person = models.OneToOneField(Person, on_delete=models.CASCADE)
+
+ForeignKey (OR) OneToManyField (OR) ManyToOneField:
+---------------------------------------------------
+from django.db import models
+
+class Person(models.Model):
+    name = models.CharField(max_length=150)
+
+class Profile(models.Model):
+    bio = models.TextField()
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+
+ManyToManyField:
+----------------
+from django.db import models
+
+class Gender(models.Model):
+    name = models.CharField(max_length=150)
+
+class Person(models.Model):
+    name = models.CharField(max_length=150)
+    gender = models.ManyToManyField(Gender)
+
+40) What are the signals in Django
+Ans) 
+Signals are pieces of code which contain information about what is happening. 
+A dispatcher is used to sending the signals and listen for those signals.
+Two important parameters in signals are:
+  Sender: It specifies a particular sender from where a signal is received.
+  Receiver: It specifies the callback function which connected to the signal.
+
+41) Difference between DELETE, TRUNCATE and DROP commands in SQL
+Ans) 
+Syntax of a SQL DELETE Statement:
+    DELETE FROM Table_Name
+    DELETE FROM Table_name WHERE Condition
+Syntax of a SQL TRUNCATE Statement
+    TRUNCATE TABLE table_name
+    DROP TABLE table_name
+
+42) Program to display the Fibonacci sequence up to n-th term
+Ans)
+num = int(input("Enter Number:"))
+n1, n2 = 0, 1
+print("Fibonacci Series:", n1, n2, end=" ")
+for i in range(2, num):
+    n3 = n1 + n2
+    n1 = n2
+    n2 = n3
+    print(n3, end=" ")
+
+print()
+
+o/p:
+-----
+Enter Number : 9
+Fibonacci Series: 0 1 1 2 3 5 8 13 21 
+
+43) Even or odd number Check in Python
+Ans)
+try:
+    num = int(input("Enter a number: "))
+    if (num % 2) == 0:
+        print("{0} is Even".format(num))
+    else:
+        print("{0} is Odd".format(num))
+except ValueError:
+    print("ERROR! Please enter a valid number.")
+
+o/p:
+-----
+Enter a number: 2
+2 is Even
+
+44)list comprehension in Python
+Ans)
+Square_num = [x*x for x in range(1,11)]
+print(Square_num)  o/p: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+45) Python packages list
+Ans) Django,Flask,SQLAlchemy,Celery,Pillow,Pytest,Requests,Beautiful Soup, NumPy, Pandas, PyTorch
+
+46) Django packages list
+Ans) Django Rest Framework (DRF), django-allauth, django-crispy-forms, django-debug-toolbar, 
+     django-environ, django-filter, django-guardian, django-cors-headers,django-ckeditor,
+     django-redis, django-celery, django-storages
+
+47) Python modules list
+Ans) sys, os, math, random, datetimes, json, re, collections, threading, multiprocessing, socket, csv, logging, xml, Sqlite3
+
+48) Difference between Class & Static & InstanceMethod
+Ans)
+Class Method:
+--------------
+ > Bound to the class itself (cls parameter).
+ > Used for class-level operations.
+ > Decorated with @classmethod.
+
+Static Method:
+---------------
+ > Bound to the class itself (no special parameter).
+ > Used for utility functions that are related to the class but don't depend on instance-specific data.
+ > Decorated with @staticmethod.
+
+Instance Method:
+----------------
+ > Bound to instances of the class (self parameter).
+ > Used to access and modify instance-specific data.
+ > Regular method within a class.
+
+49) Count the integer number repeated in the above list
+Ans) 
+from collections import Counter
+numbers = [1, 2, 3, 4, 1, 2, 1, 3, 4, 5, 5]
+counts = Counter(numbers)
+for num, count in counts.items():
+    print(f"{num}: {count}")
+
+o/p: 
+1: 3
+2: 2
+3: 2
+4: 2
+5: 2
+
+50)Merging both tuples
+tuple1 = (1, 2, 3)
+tuple2 = ('a', 'b', 'c')
+
+# Merging both tuples
+merged_tuple = tuple1 + tuple2
+
+print("Merged tuple:", merged_tuple)  o/p: (1, 2, 3, 'a', 'b', 'c')
+
+51) what is Garbage collection
+Ans)
+Garbage collection is a memory management technique used in programming languages to automatically reclaim memory that is no longer accessible 
+or in use by the application. It helps prevent memory leaks, optimize memory usage, and ensure efficient memory allocation for the program.
+
+52) Reverse a string in Python
+Ans)
+def reverse_string(s):
+    return s[::-1]
+    
+original_string = "hello" // [1,2,3,4,5,6,7,8,9]
+reversed_string = reverse_string(original_string)
+
+print("Original String:", original_string) // Original String: hello   // Original String: [1,2,3,4,5,6,7,8,9]
+print("Reversed String:", reversed_string) // Reversed String: olleh   // Reversed String: [9,8,7,6,5,4,3,2,1]
+
+53) What is Multi-Threading in python
+Ans)
+Multithreading is a technique that allows multiple threads to run concurrently within the same program.
+This can be useful for tasks that can be broken down into smaller, independent subtasks, 
+as each thread can work on a different subtask at the same time.
+There are a number of benefits to using multithreading in Python, including:
+      1. Improved performance
+      2. Increased responsiveness
+      3. Improved resource utilization
+
+54) Django Project file names
+Ans)
+1. manage.py
+2. settings.py
+3. urls.py
+4. wsgi.py
+5. asgi.py
+6. __init__.py
+
+55) What is Virtual DOM
+Ans)
+A virtual DOM (VDOM) is a lightweight JavaScript representation of the Document Object Model (DOM).
+It's a programming concept that keeps an ideal representation of a UI in memory and syncs it with the real DOM.
+
+56) Find min and max number using in-build
+Ans)
+my_list = [9,4,6,3,7,5]
+
+min_num = min(my_list)
+max_num = max(my_list)
+
+print("Min Number:", min_num)   O/P: Min Number: 3
+print("Max Number:", max_num)   0/P: Max Number: 9
+
+57)Set comprehension in Python
+Ans)
+Square_set = {i*i for i in range(1,10)}  
+print(Square_set)                        O/P: {64, 1, 4, 36, 9, 16, 49, 81, 25}
+print(type(Square_set))                  O/P: <class 'set'>
+
+58)Dictionary comprehension in Python
+Ans)
+Square_dic = {i:i*i for i in range(1,10)}
+print(Square_dic)                            O/P: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+print(type(Square_dic))                      O/P: <class 'dict'>

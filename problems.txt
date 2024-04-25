@@ -1,0 +1,35 @@
+10)Count the integer number repeated in the above list
+Ans) 
+from collections import Counter
+
+my_list = [1, 2, 3, 4, 5, 2, 4, 4]
+
+element_counts = Counter(my_list)
+
+for element, count in element_counts.items():
+    print(f"{element}: {count} times")
+
+
+
+12) Print Even number in Python
+Ans)
+def print_even_number(limit):
+    for num in range(1, limit+1):
+        if num % 2 == 0:
+          print(num)
+
+limit =10
+
+print_even_number(limit)
+
+13) Print odd number in python
+Ans)
+def print_odd_number(limit):
+    for num in range(1, limit+1, 2):
+        print(num)
+
+limit =10
+
+print_odd_number(limit)
+
+
