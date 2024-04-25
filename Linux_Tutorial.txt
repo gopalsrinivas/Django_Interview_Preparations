@@ -1,0 +1,26 @@
+Linux File Commands:
+------------------------
+touch filename
+touch f1 f2 f3
+touch filename{1..10}
+touch filename{1..5}.txt
+touch filename{1..5}.pdf
+touch filename{1.6}.png
+
+touch aws.txt
+touch aws.png
+touch aws.jpg
+
+Remove filename:
+------------------
+rm
+rm {1..10}
+rm -f aws1 aws2
+rm -f *
+rm -f *.png
+rm -f a*
+rm -f c*
+
+
+Clear
+

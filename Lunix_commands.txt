@@ -1,0 +1,13 @@
+Lunix commands
+--------------
+1. ls => Directory file list
+2. $touch myfile => Create a new empty file:
+    -> echo "hi Gopal srinivas" > gopal.txt
+3. $mkdir cloud => create a new directory
+4. mv gopal.txt gopal => gopal.txt file ni gopal folder lo ki move cheysthunnam
+5. $rm -i filename  => File ni delete
+6. $rmdir dirname   => Folder ni delete (empty folder)
+7. rm -r gopal => Folder delete (Not empty folder)
+8. 
+
+    

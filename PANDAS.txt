@@ -1,0 +1,370 @@
+PANDAS
+-------
+Features
+----------
+1. High performance Data Analysis Tool
+2. Working with large Data set
+3. Supports or load files with different formats
+4. More Flexible
+5. Represents in Tabular way(Rows and columns)
+6. Working on missing data
+7. Indexing - slicing - subsetting the large data sets
+8. Merge and join two different datasets easily
+9. Reshape datasets
+
+Data Structures
+----------------
+1. Series      -> one Dimonsional   -> List
+2. Dataframes  -> Two Dimensional   -> List/dictionary/Series/another Data frames
+3. Panel       -> Multi Dimensional -> data/Major axis (col)/ Minor axis (Rows)
+
+Syntax:
+-------
+import pandas as pd
+1. pd.Series(data,index)
+2. pd.DataFrame(data)  => Most efficient data structure
+3. pd.Panel(data,major axis, minor axis, dtype)
+
+Series
+-------
+1. Empty Series
+2. Series using Array
+3. series using lists and Dictionary
+
+import pandas as pd
+import numpy as np
+a=np.array([10,20,30,40])
+L=[10,20,30,40]
+d={'a':10,'b':20,'c':30,'d':40}
+
+1) s=pd.Serires()
+   series([])
+2) s=pd.Series(a)
+3) s=pd.Series(L)
+4) s=pd.Serires(d)
+
+Data Frame
+-----------
+1. Load the data from excel & CSV file
+3. Create Data frame using Dictionary
+4. Create Data fram using List of tuples
+
+Example:
+--------
+import pandas as pd
+d=pd.read_excel("c:\\users\\Marks.xlsx")
+d
+df=pd.DataFrame(d)
+pring(df)
+
+data=pd.read_csv("c:\\users\\Marks.csv")
+df1=pd.DataFrame(data)
+print(df1)
+
+d={'Name of Student':['Billakurthi','Venkat','Gopal','Srinivas'],
+   'Roll no':[101,102,103,014],
+   'Telugu':[90,80,75,86],
+   'English':[90,98,78,78]}
+df2=pd.DataFrame(d)
+print(df2)
+
+
+ATTRIBUTES:
+-----------
+-> index -> Series.index -> Return all index values
+-> array -> Series.array -> Return an array of values
+-> values -> Series.values -> Return values of series
+-> name -> Series.name -> Return name of series
+-> shpe -> Series.shape -> Return the shape
+-> ndim -> Series.ndim -> Returns the dimension of series
+-> size -> Series.size -> Returns the size of series
+-> nbytes -> Series.nbytes -> Returns the memory occupied by values
+-> memory_usage() ->Series.memory_usage() -> Returns memory occupied by both index & values
+-> empty -> Series.empty -> Returns True -> if Series is empty
+                                    False -> If series is not empty
+
+
+example:
+--------
+import pandas as pd
+s=pd.Series([10,20,30,40,50],index=['a','b','c','d','e'],name="Numbers")
+print(s)
+s.index
+s.array
+s.values
+s.dtype
+s=pd.Series([10.5,20.5,30.5,40.5,50.5],index=['a','b','c','d','e'], name="Float")
+s.dtype
+s.shape
+s.ndim
+s.nbytes
+s.memory_usage()
+s.size
+s.name
+s.empty
+
+MATHEMATICAL FUNCTIONS ON SERIES
+---------------------------------
+ex:
+---
+ s1 = pd.Series([10,20,30])
+ s2 = pd.Series([40,50,60])
+
+add         -> s1.add(s2)        -> s1+s2
+Subtract    -> s1.Subtract(s2)   -> s1-s2
+multiply    -> s1.multiply(s2)   -> s1*s2
+division    -> s1.divide(s2)     -> s1/s2
+modulo      -> s1.mod(s2)        -> s1%s2
+power       -> s1.pow(s2)        -> s1**s2
+lessthan    -> s1.le(s2)         -> s1<s2
+greaterthan -> s1.gt(s2)         -> s1>s2
+equalto     -> s1.eq(s2)         -> s1==s2
+
+INDEXING & SLICING DATAFRAMES IN PANDAS :
+--------------------
+head () -> First 5 Rows
+head(no.of.Rows) -> 3 Rows
+  
+tails() -> last 5 Rows
+tails(no.of.Rows) -> 4 Rows
+
+describe() -> Count avg   
+              Min   75%
+              Max   25%
+              std
+
+-> Shape -> no.of.Rows & no.of.columns
+-> [start:stop:step]
+     0  : length : 1 -> default
+-> data_frame['column_name'] -> Single Column
+-> data_frame [[col1,col2]]  -> Multiple Column
+-> data_frame [[col1,col2]]  -> [start:stop:step]
+  
+Example:
+-------
+import pandas as pd
+
+d = pd.read_excel("c:\\Users\\sunde\\Destop\\marks.xlsx")
+df = pd.DataFrame(d)
+print(df)
+df.head(2)
+df.tail()
+df.describe()
+df.columns
+df.shape
+df[['Roll_No','Telugu','Social']].head(10)
+df[['Roll_No','Telugu','Social']].tail(10)
+df[1:10:2]
+df[['Roll_No','Name_of_Student','Telugu']][1:6]
+df.loc[1]
+df.loc[1:6]
+
+for index, rows in df.iterrows():
+    print(index, rows)
+
+for index, rows in df.iterrows():
+    print(index, rows[['Roll_No','Name_of_Student','Telugu']])
+
+df.loc[df['Roll_No']==105]
+df.loc[df['Name_of_Student'] == 'sundeep']
+
+
+Sorting DataFrame (By Column)
+------------------------------
+import pandas as pd
+d=pd.read_excel("c:\\Users\\sunde\\Desktop\\Marks.xlsx")
+df=pd.DataFrame(d)
+print(df)
+df.sort_values("Name_of_Student")
+df.sort_values("Maths", ascending=False)
+df.sort_values("Name_of_Student", ascending=False)
+df.sort_values(["Name_of_Student","Maths"], ascending=False)
+df.sort_values(["Science","Maths"], ascending=[1,0]) 0=ascending & 1 is descending
+
+MANIPULATING DATAFRAME IN PANDAS (ADD COLUMN , DROP COLUMN) 
+------------------------------------------------------------
+import pandas as pd
+d = pd.read_excel('c:\\Users\\sunde\\Desktop\\Marks.xlsx')
+df = pd.DataFrame(d)
+print(df)
+df['Total_marks']==0
+df['Total_marks'] = df['Telugu']+df['English']+df['Maths']+df['Science']+df['Social']
+df.drop(columns="Total_Marks")
+
+EXPORT DATAFRAME TO EXCEL, CSV & TEXT FILE IN PANDAS
+--------------------------------------------------------
+import pandas as pd
+d = pd.read_excel('c:\\Users\\sunde\\Desktop\\Marks.xlsx')
+pd=pd.DataFrame(d)
+print(pd)
+df['Total']=df['Telugu']+df['English']+df['Maths']+df['Science']+df['Social']
+df.to_excel("c:\\Users\\sunde\\Desktop\\Marks.xlsx", index=False) => excel file download
+df.to_csv("c:\\Users\\sunde\\Desktop\\Marks.xlsx", index=False)
+df.to_csv("c:\\Users\\sunde\\Desktop\\Marks.txt", index=False, sep="\t")
+
+
+UNDERSTANDING LOC[ ] & iLOC[ ] IN PANDAS :
+-----------------------------------------
+import pandas as pd
+
+d = pd.read_excel("c:\\Users\\sunde\\Desktop\\Grades.xlsx")
+df = pd.DataFrame(d)
+print(df)
+df.loc[3, 'Name_of_Student']
+df.loc[0:4, ["Name_of_Student","PERCENTAGE"]]
+df.loc[0:4, "Name_of_Student":"Social"]
+df.iloc[0:4,0:7]
+df.iloc[:,[0,7]]
+
+HANDLING MISSING DATA (dropna & fillna) :
+----------------------------------------
+REMOVE MISSING DATA       -> DROPNA()
+FILL WITH DEFAULT VALUES  -> FILLNA()
+
+import pandas as pd
+
+d=pd.read_excel("c:\\Users\\sunde\\Desktop\\MissingData.xlsx")
+df = pd.DataFrame(d)
+print(df)
+df.dropna()
+df.dropna(inplace=True)
+df['Telugu'].dropna()
+df.loc[:,['Telugu','English']].dropna()
+
+df.fillna("MISSING",inplace=True)
+df
+df['Telugu'].fillna(40)
+df.loc[:,['Telugu','English']].fillna(45)
+df['Telugu'].fillna(df['Telugu'].mean())
+df['Telugu'].mean()
+import math
+df['Telugu'].fillna(math.floor(df['Telugu'].mean()))
+
+REMOVE DUPLICATES FROM DATAFRAME IN PANDAS
+-------------------------------------------
+import pandas as pd
+
+d = pd.read_excel("c:\\Users\\sunde\\Desktop\\Duplicates.xlsx")
+df = pd.DataFrame(d)
+print(df)
+df.duplicated()
+df.drop_duplicates()
+df.drop_duplicates(inplace=True)
+
+
+DATA FILTERING (USING CONDITIONS) IN PANDAS
+--------------------------------------------
+import pandas as pd
+
+d = pd.read_excel("c:\\Users\\sunde\\Desktop\\data.xlsx")
+df = pd.DataFrame(d)
+print(df)
+df.loc[df['Telugu']<60]
+df.loc[(df['Telugu']<60) & (df['English']<60)]
+df.loc[(df['Telugu']<60) | (df['English']<60)]
+df.loc[(df['Telugu']<60) & (df['English']<60) & (df['Maths']>80)]
+df.loc[df["Name_of_Student"].str.contains("th")]
+df.loc[df["Name_of_Student"].str.startwith("s")]
+df.loc[~df["Name_of_Student"].str.startwith("s")]
+df.loc[df["Name_of_Student"].str.endswith("s")]
+df.loc[~df["Name_of_Student"].str.endswith("s")]
+
+CONDITIONAL CHANGES IN PANDAS
+-------------------------------
+import pandas as pd
+
+d = pd.read_excel("c:\\Users\\sunde\\Desktop\\data.xlsx")
+df = pd.DataFrame(d)
+print(df)
+
+df['total'] = df['Telugu'] + df['English'] + df['Maths'] + df['Science'] + df['Social']
+df
+df['percentage'] = (df['total']/500)*100
+df['Grade']='None'
+
+"""
+< 40 - FAIL
+< 40 & 60 - PASS
+> 60 & 70 - FRIST CLASS
+> 70 - DISTINCTION
+"""
+df.loc[df['percentage'] < 40, ["Grade"]]= "FAIL"
+df
+df.loc[(df['percentage']>40) & (df['percentage']<60), ['Grade']="PASS"]
+df
+df.loc[(df['percentage']>60) & (df['percentage']<70), ['Grade'] = "FIRST CLASS"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
