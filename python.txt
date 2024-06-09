@@ -314,7 +314,8 @@ Widely Used in Web Development: JSON is commonly used in web development for API
 28). How you can create a project in Django
 Ans)
 django-admin startproject projectName
-py manage.py startapp appName
+python manage.py startapp appName
+python manage.py createsuperuser
 
 29) What are the features available in Django?
 Ans)
