@@ -1,0 +1,178 @@
+Step:1
+------
+Create New VM Instance:
+------------------------
+	1. Name :  demo-kits (Project Name)
+	2. Region : asia-south1(Mumbai) Zone: aisa-south1-c
+	3. Machine type: e2-small(2 vCPU, 1core, 2GB memory)
+	4. Availability policies : Standard
+	5. Boot disk : Change => 
+		  > PUBLIC IMAGES
+			  > Operating system => Ubuntu
+			  > Size => 100 GB
+	6. Firwall
+       > Allow HTTP traffic	 
+	   > Allow HTTPS traffic
+	   > Allow Load Balancer Health Checks
+	   
+crate => click
+
+
+
+Setp:2
+-------
+Creating and Using SSH Keys in Windows
+---------------------------------------
+1. Go to console
+2. ssh-keygen -t rsa -f gopal-key -C gopal -b 2048
+
+     > Enter passphrase (empty for no passphrase): Enter
+	 > Enter same passphrase again: Enter
+	 > Your identification has been saved in gopal-key
+	 > Your public key has been saved in gopal-key.pub
+     > The key fingerprint is:
+		SHA256:C1IeKvqSxxbZXlEYd/z85XkdOiw0ud35uwAyw7Jcwq4 gopal
+		
+3. ls
+    > gopal-key  gopal-key.pub  myuser-key  myuser-key.pub  README-cloudshell.txt
+	
+4. cat gopal-key.pub
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqJxzFVuc029kW0u11CcYlBlRf1KJv1VsGXydIiWkle/9xICuNLwa9YHtXix3SjYj7j+u0xJmaB4Pz8xGqAh+D5oQlCj0HJUqLtENqF/E2UYpUSoeYcdaOyaXkltzyw39eWGsJZgmqvi43ntehggMoXJ6O4eHdmrLV4APLg2O+AjsjnCjsTlkrm+Ygxj5ea8IB+Zx+ycyQjjyZlmhZDJ/dCPAzMkBcPH1Yqn++tfBNyTHPIDX3fs7aWPGhtZyp99JfvJr7SAgp3COfrDPQsK3s/OUk8sG8GODjLlZ/CUODiUPj/12qn/qQHraX5N7aQkWaj2GBMcKtys1V/lEoTOfT gopal
+	
+5. stop VM 
+
+6. ssh -i gopal-key gopal@35.200.237.194   => Enter
+
+7. The authenticity of host '35.200.237.194 (35.200.237.194)' can't be established.
+		ED25519 key fingerprint is SHA256:vN/w/ohYmxLG5ck9ywU3iHFKWGnH4yce2eoKldGrcj4.
+		This key is not known by any other names
+		Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+
+
+Putty
+------
+gopal
+0. ping 35.200.237.194
+1. sudo apt update
+2. sudo apt install git -y
+3. mkdir apps
+4. ls
+5. cd apps/
+6. ls
+	>. mkdir backend
+	>. cd backend
+7. git clone https://github.com/Gopalroboxa3/kit_testing.git
+8. cd kit_testing
+9. git branch
+10. git checkout jwt_token_phase2(branch)
+11. git branch
+12. ls
+13. cat or vim .env (cat => view file, vim => edit)
+14. Press i to enter insert mode.
+15. Change and add and delete and update specified lines.
+16. edit ip address: vm ip address
+17. We can change .env file ip address like(DB_IP=192.168.1.163) => GCP - Internal IP => 10.160.0.2
+        > Change 
+		        DB_IP = 10.160.0.2 (GCP Internal IP)
+		        DB_USERNAME = gopal
+		        DB_PASSWORD = gopal
+				DB_DATABASE = demo_kit_db
+				ENVIRONMENT=dev
+18. Press Esc to exit insert mode.
+19. Type :wq and press Enter.
+				 
+docker insall ubuntu
+---------------------
+    https://docs.docker.com/engine/install/ubuntu/ => Enter check below lines
+
+20. sudo apt-get install ca-certificates curl
+21. sudo install -m 0755 -d /etc/apt/keyrings
+22. sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+23. sudo chmod a+r /etc/apt/keyrings/docker.asc
+24.
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+		sudo apt update
+		sudo apt install -y docker.io
+		sudo systemctl start docker
+		sudo systemctl enable docker
+		sudo curl -L "https://github.com/docker/compose/releases/download/v2.27.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+		sudo chmod +x /usr/local/bin/docker-compose
+		docker --version
+		docker-compose --version
+		cd ~/apps/kit_testing/backend
+		
+25. sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+      
+	  sudo apt install postgresql-client -y
+	  sudo apt install postgresql postgresql-contrib
+	  sudo systemctl start postgresql
+	  sudo systemctl enable postgresql
+	  psql --version
+
+26. sudo docker compose --profile kits-testing build --no-cache
+27. sudo docker compose --profile kits-testing up -d
+
+28. sudo docker compose --profile kits-be build --no-cache
+29. sudo docker compose --profile kits-be up -d
+  
+30. sudo docker compose --profile db build --no-cache
+31. sudo docker compose --profile db up -d
+32. sudo docker ps
+      IMAGE           NAMES  
+	  ------          -----
+	  dev-kits-api    dev-kits-api
+	  postgres:15.1   kits-db
+
+22. external ip : 122.175.43.71(GCP external IP) (http://122.175.43.71:5001/api/doc)
+ 
+
+Frontend:
+------------------
+1. cd frontend
+2. ls
+3. git branch
+4. git checkout kitsPhase2(branch)
+5. vim src/app/api.ts (change api.ts file ) => change line ==> export const apin = "http://localhost:5001/api" 
+6. curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+7. sudo apt install nodejs
+8. node -v
+   npm -v
+   
+9. sudo docker compose -- profile kits-ui build --no--cache
+10. sudo docker compose --profile kits-ui up -d
+11. npm install --legacy-peer-deps
+12. sudo npm install -g @angular/cli
+13. npm install jquery popper.js
+7. sudo docker compose --profile kits-ui build --no--cache
+7. sudo docker compose --profile kits-ui up -d
+8. sudo docker ps
+9. 
+
+
+
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+#DB_IP=192.168.1.163
+DB_IP=127.0.0.1
+DB_DATABASE=demo_test_kit_db
+ENVIRONMENT=dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
