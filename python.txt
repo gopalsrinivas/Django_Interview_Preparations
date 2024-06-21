@@ -209,8 +209,9 @@ NOSQL
     print("Uncommon elements:", uce) O/P : Uncommon elements: {1, 2, 6, 7}
 
 18) What is a Python interpreter
-Ans) The Python interpreter is a program that executes Python code.
-      It reads and interprets Python scripts or commands line by line and carries out the instructions.
+Ans) Interpreters are the computer program that will convert the source code or an high level language into intermediate code 
+     (machine level language). It is also called translator in programming terminology. 
+     Interpreters executes each line of statements slowly. This process is called Interpretation
 
 19) What is the Python map() function?
 Ans) The map() function executes a specified function for each item in a given iterable (list, tuple etc). 
@@ -527,8 +528,8 @@ Square_num = [x*x for x in range(1,11)]
 print(Square_num)  o/p: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 45) Python packages list
-Ans) Django,Flask,SQLAlchemy,Celery,Pillow,Pytest,Requests,Beautiful Soup, NumPy, Pandas, PyTorch
-
+Ans) Django, Flask, NumPy, Pandas, SQLAlchemy, Celery, Pillow, Pytest, Requests, Beautiful Soup, PyTorch
+   
 46) Django packages list
 Ans) Django Rest Framework (DRF), django-allauth, django-crispy-forms, django-debug-toolbar, 
      django-environ, django-filter, django-guardian, django-cors-headers,django-ckeditor,
