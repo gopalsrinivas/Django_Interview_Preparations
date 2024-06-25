@@ -653,6 +653,7 @@ List
 3. We need to import the array before work with the array. 
 4. The lists are less compatible than the array to store the data.
 5. It consumes a large memory.
+6. We can print the entire list using explicit looping. 
 
 Arrays
 ------
@@ -661,3 +662,4 @@ Arrays
 3. The lists are the build-in data structure so we don't need to import it.
 4. An array are much compatible than the list.
 5. It is a more compact in memory size comparatively list.
+6. wE can print the entire list without using explicit looking.
