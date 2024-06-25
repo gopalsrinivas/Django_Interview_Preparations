@@ -643,3 +643,21 @@ Ans)
 Square_dic = {i:i*i for i in range(1,10)}
 print(Square_dic)                            O/P: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
 print(type(Square_dic))                      O/P: <class 'dict'>
+
+59) Difference Between Array and List in Python
+Ans)
+List
+-------
+1. The list can store the value of different types.
+2. The list cannot handle the direct arithmetic operations. 
+3. We need to import the array before work with the array. 
+4. The lists are less compatible than the array to store the data.
+5. It consumes a large memory.
+
+Arrays
+------
+1. It can only consist of value of same type.
+2. It can directly handle arithmetic operations.
+3. The lists are the build-in data structure so we don't need to import it.
+4. An array are much compatible than the list.
+5. It is a more compact in memory size comparatively list.
