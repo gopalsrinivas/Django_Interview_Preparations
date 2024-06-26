@@ -1,3 +1,28 @@
+Building a Powerful Django Web App: From GitHub to EC2 with Jenkins and Docker:
+
+
+https://youtu.be/ENH0SUHZPXI?si=QQcmTUjqV5rDVWHO
+
+
+
+Deploy Django Application at A.W.S Using CICD pipelines
+
+https://youtu.be/hvfvXPvRwdA?si=883PDeJ_FWvXiyhg 
+
+Deploy process django application
+
+1. EC2
+2. GitHub
+3. Jenkins
+4. Docker
+5. PostgreSQL
+6. Django application
+
+1. UAT,DEV,testing untayi servers docker lo add cheyali
+2. GitHub lo code ni push cheyyaganey Jenkins job start ayyi automatic build command run avvali
+3. Give me full step by step clear ga kavali
+    
+
 AWS How to Launch an EC2 instance:
 ------------------------------------
 1. Go to EC2 Dashboard
@@ -18,3 +43,48 @@ AWS How to Launch an EC2 instance:
         => Allow SSH traffic from
         => Allow HTTPS traffic from the internet
         => Allow HTTP traffic from the internet
+
+Putty:
+------
+1. ping 35.200.237.194 (Public IP address)
+2. sudo apt update
+3. sudo apt install python3
+4. python3 --version
+5. sudo apt install python3-pip
+6. pip3 --version
+7. sudo apt install git -y
+8. git --version
+9. git clone https://github.com/gopalsrinivas/hotel_management_system.git
+
+10. Jenkins install on Ubuntu
+
+    > https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
+    > sudo apt install fontconfig openjdk-17-jre
+    > java -version
+    > sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+        https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+    > echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+        https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+        /etc/apt/sources.list.d/jenkins.list > /dev/null
+    > sudo apt-get update
+    > sudo apt-get install jenkins
+    > which jenkins
+    > service jenkins status
+    > sudo ufw enable
+    > sudo ufw allow 8080
+    > sudo ufw reload
+    > sudo ufw status
+    > Add an inbound rule to allow traffic on port 8080.
+       > Go to Security Tab
+       > Go to Security groups
+       > Edit inbound rules
+       > Add rule
+       > Add range 8080 
+    > sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+    > 3d6f77f99a094775bdb4a71028c4f3b4 (add UI password)
+    > add form (Jenkins)
+    > manage jenkins
+         > plugin (docker install)
+    > 
+          
+
