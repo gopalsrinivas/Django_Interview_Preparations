@@ -30,6 +30,10 @@ Implement Amazon S3 Storage for Static and Media files in Django
 https://youtu.be/JQVQcNN0cXE?si=fu_PP4zG3jEwVr5D
 
 
+How to Create and Connect to PostgreSQL 16 AWS RDS Instance | Updated 2024
+---------------------------------------------------------------------------
+https://youtu.be/rX2hozC8I_g?si=cxlpmovqm2btkadx
+
 
 AWS How to Launch an EC2 instance:
 ------------------------------------
