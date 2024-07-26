@@ -665,3 +665,47 @@ Arrays
 4. An array are much compatible than the list.
 5. It is a more compact in memory size comparatively list.
 6. wE can print the entire list without using explicit looking.
+
+60) what is generator in python ?
+A) A generator in Python is a function that returns an iterator which we can iterate over one value at a time, using the yield statement.
+example:
+--------
+def simple_generator():
+    yield 1
+    yield 2
+    yield 3
+
+gen = simple_generator()
+
+print(next(gen))  # Output: 1
+print(next(gen))  # Output: 2
+print(next(gen))  # Output: 3
+
+Generators are used for:
+---------------------------
+Memory Efficiency: They generate items on-the-fly, without storing the entire sequence in memory.
+Lazy Evaluation: Values are computed as needed, which can improve performance with large data sets.
+Readable Code: They simplify code for iterating over sequences, especially when dealing with infinite or large data streams.
+
+example:
+---------
+def count_up_to(max):
+    count = 1
+    while count <= max:
+        yield count
+        count += 1
+
+counter = count_up_to(5)
+for num in counter:
+    print(num)
+    # Output:
+    # 1
+    # 2
+    # 3
+    # 4
+    # 5
+
+
+
+
+
