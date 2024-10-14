@@ -1,0 +1,37 @@
+section:1
+---------
+1. Can you briefly tell us about your education background and the degress you have obtained ?
+2. You have experience working as a tech lead at Tech Mahindra Life circle Health services. Can you elaborate on your key
+    responsiblilities and accomplishments in that role ?
+3. You have various certifications related to python,PHP,Django and web Designing. How have these certifications contributed to your current skill set and job performance ?
+
+section:2
+----------
+1. Can you describe a time when you had to debug a python Script that wasn't working ? what steps did you take to identify and reslove the issue ?
+2. Tell me about a time when you had to hanndle a significant code refactoring project in Python. What was your approach, and how did you ensure the reliability of the code after changes ?
+3. Describe a situation where you had to integrate a new technology or tool into a python project. How did you assess its suitability and implement it effectively ?
+4. Can you discuss a time when you led a team through a particulary challenging python project ? What strategies did you employ to overcom obstacles and ensure successful dilivery ?
+
+section:3
+----------
+1. Can you explain the difference between classes and IDs in css3 and when you would use each ?
+2. How do you implement session management in django, and what are some best practices to follow ?
+3. Can you describe a situation where you had to merge conflicting branches in Git and how you resolved it ?
+4. What are some key difference between using JQuery and Ajax methods and the Fetch API in vanilla Javascript for making asynchronous HTTP requests ?
+5. How does the component lifecycle in React Js work, and how can you leverage lifecycle methods for Performance optimization ?
+6. Discuss the pros and cons of using Django's ORM versus raw SQL queries in a high-traffic appliaction. In what scenarious would you choose one over the other ?
+
+section:4
+----------
+1. Which articel would you use before a word starting with a vowel sound ?
+A) an
+2. Choose the correct sentence:
+A) she goes to school
+3) 
+
+section:5
+----------
+1. Write a python function to find the maximun of three numbers.
+2. Write a ptyhon progam to find the longest common prefix string amoungs an array of strings.
+3. Write a python function to sort a list to tuples based on the second element
+4. Write a python progam to find the kth largest element in an unsorted array.

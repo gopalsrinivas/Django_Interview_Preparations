@@ -706,6 +706,184 @@ for num in counter:
     # 5
 
 
+61.	Why dict takes only immutable datatypes as keys?
+Ans) Hashing, unique key, hashability, immutable cannot be changed after declaration 
+
+62)	Other than list, which other datatypes supports comprehension technique? 
+Ans) Dict Comprehension and Set Comprehension 
+
+63) What is the difference between “double equal to” (==) and “is” operator?
+Ans) == checks exact value,
+     "is" checks for same object or memory location based
+
+64) What is the time complexity or Big O (pronounced as Big Ohh) notation of list.sort, list.append, list.index 
+Ans) sort is N(Log N), append is O(1) or constant time, index is O(n) or linear 
+
+65) Why is set unordered? 
+Ans) Items are hashed, hashable, allows only immutable types 
+
+66) What is context manager? 
+Ans) "with clause". Context manager ensures graceful opening/entry and closing/exit, and maintains the context
+
+67) What is MRO, and when MRO plays role? 
+Ans) Method Resolution Order. MRO plays role when there is multiple inheritance.
+
+68) Does Python supports operator overloading? 
+Ans) Yes. Magic methods or Dunder methods  (e.g., __add__, __eq__).
+
+69) What is a singleton class? How to implement singleton class in python? 
+Ans) Only one instance of class. Single object or one object. Modify __new__ magic method to implement
+
+70) What is a blueprint in Flask?
+Ans) Organize APIs, common patterns, register routes, URL prefix, sub-app.
+
+71) What do you mean by stateless with respect to REST APIs?
+Ans) Independent requests, no sessions, no need to track multiple communication, no client server dependency 
+
+72) What are Flask middlewares?
+Ans) before_request, after_request, methods that execute before/after each request.
+
+73) What is the difference between one, first and scalar calls in SqlAlchemy?
+Ans)
+    One: Expects exactly one record, raises exception if no record or multiple records found.
+    First: Returns the first filtered row.
+    Scalar: Similar to one(), but does not raise an exception if no record is found.
+
+FastAPI Questions:
+-----------------
+74) What are the key features of FastAPI that make it popular for building APIs?
+Ans)
+    FastAPI is fast and provides high performance.
+    Asynchronous programming support with async and await.
+    Automatic validation using Pydantic models.
+    Interactive API documentation generated automatically using OpenAPI.
+    Performance is comparable to Node.js and Go for building APIs.
+    Easy to use and provides developer-friendly tools for building APIs.
+
+75) How does dependency injection work in FastAPI?
+Ans)
+    FastAPI allows reusable components to be injected into endpoints.
+    Dependencies (e.g., database connections) are defined as functions.
+    Use the Depends() function to inject them into routes.
+
+76)	How does FastAPI handle async and await?
+Ans)
+    FastAPI supports asynchronous programming with async and await.
+    Async endpoints handle non-blocking I/O operations.
+    This allows serving multiple requests concurrently.
+    Improves scalability and performance.
+
+77)	How does FastAPI handle validation, and what role does Pydantic play?
+Ans) FastAPI uses Pydantic for automatic data validation.
+    Validates request bodies, query, and path parameters.
+    Pydantic models enforce type hints and provide error reporting.
+    This is a core strength of FastAPI.
+
+78) How would you implement OAuth2 authentication in FastAPI?
+Ans) 
+    FastAPI supports OAuth2 authentication with password flow.
+    Use OAuth2PasswordBearer to define the authentication scheme.
+    Create a token endpoint that returns a JWT token.
+    Use dependency injection to validate tokens on protected endpoints.
+
+79) How can you handle CORS (Cross-Origin Resource Sharing) in a FastAPI application?
+Ans) 
+    FastAPI has built-in support for CORS via CORSMiddleware.
+    Use fastapi.middleware.cors.CORSMiddleware class to enable CORS.
+    Specify allowed domains, methods, and headers for cross-origin requests.
+    Add the middleware to your FastAPI application to configure CORS.
+
+80) 7.	How do background tasks work in FastAPI ?
+Ans)
+    FastAPI offers a BackgroundTasks class for handling background tasks.
+    Background tasks run after returning a response, allowing the main process to continue.
+    Useful for non-blocking operations like sending emails or processing files.
+    Tasks are scheduled to execute after the response is sent to the client.
+
+81) How do you handle file uploads in FastAPI?
+Ans)
+    FastAPI simplifies file uploads using File and UploadFile types.
+    UploadFile is preferred for large files as it streams data instead of loading it into memory.
+    File uploads can be accessed by declaring them as dependencies in the route.
+    This approach enhances efficiency and performance when handling file uploads.
+
+Flask Questions:
+------------------
+82) What are the main differences between Flask and FastAPI? 
+Ans)
+    Flask is a traditional web framework; FastAPI is asynchronous.
+    FastAPI provides better performance for I/O-bound operations.
+    FastAPI includes built-in validation and type hints.
+    Flask often requires third-party libraries for similar features. 
+
+83) How do you implement middleware in Flask?
+Ans)
+    Middleware in Flask can be implemented via:
+        Creating a WSGI middleware component.
+        Using before_request and after_request hooks.
+    Hooks allow code execution:
+        Before each request.
+        After each request.
+
+84) Can you explain the difference between shallow copy and deep copy in Python?
+Ans) 
+    Shallow Copy:
+        Creates a new object.
+        Inserts references to the same elements as the original.
+        Changes in mutable elements affect both copies.
+    Deep Copy:
+        Creates a new object.
+        Recursively copies all objects found in the original.
+        New object is independent of the old one.
+
+85)How does the Global Interpreter Lock (GIL) affect multi-threading in Python?
+Ans)
+    Global Interpreter Lock (GIL):
+        A mutex that ensures only one thread executes Python bytecodes at a time.
+    Impact on CPU-bound tasks:
+        Can be a performance bottleneck.
+        Limits multi-threaded execution, leading to inefficient CPU utilization.
+    Impact on I/O-bound tasks:
+        Less of an issue since threads can be released while waiting for I/O operations.
+        Allows better concurrency during I/O waits.
+
+86)What are Python’s context managers, and how are they implemented?
+Ans)Definition:
+        Context managers manage resources (e.g., files, connections) efficiently.
+    Implementation:
+       Utilizes the with statement to ensure proper resource acquisition and release.
+    Custom Context Manager:
+        Created by defining __enter__ and __exit__ methods.
+        Alternatively, use the @contextmanager decorator from the contextlib module.
+
+87) How do you handle exceptions in Python, and what is the finally clause used for?
+Ans) 
+    Exception Handling:
+        Use try to enclose code that may raise exceptions.
+        Use except to define actions for specific exceptions.
+    Finally Clause:
+        Executes code regardless of exceptions.
+        Typically used for cleanup tasks (e.g., closing files, releasing resources).
+
+88) Can you explain what Python’s asyncio library is and how it differs from traditional multi-threading?
+Ans)
+    Asyncio Library:
+        Used for writing concurrent code with async and await.
+        Supports cooperative multitasking.
+    Differences from Multi-threading:
+        Single-threaded: asyncio runs multiple tasks in a single thread.
+        Control Yielding: Tasks yield control during I/O-bound operations, avoiding pre-emption.
+        Ideal for I/O-bound apps: More efficient for applications like web servers.
+
+89) What are metaclasses in Python, and when would you use one?
+Ans)Metaclasses:
+        Classes of classes; define behavior of class objects.
+    Usage:
+        Control class creation.
+        Add or modify methods and attributes.
+        Enforce constraints during class construction.
+
+
 
 
 
