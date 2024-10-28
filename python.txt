@@ -37,20 +37,21 @@ Ans)
 syntax:
 ---------
 @decorator_name
+
 example:
 ------------
-def my_decorator(func):
+def greet_decorator(func):
     def wrapper():
-        print("Something is happening before the function is called.")
+        print("Hello !")
         func()
-        print("Something is happening after the function is called.")
+        print("Good Bye !")
     return wrapper
 
-@my_decorator
-def say_hello():
-    print("Hello!")
+@greet_decorator
+def say_name():
+    print("I am Gopal !")
 
-say_hello()
+say_name()
 
 6) How to convert a list to a tuple ?
 Ans)
@@ -103,8 +104,17 @@ MIDDLEWARE = [
   'path.to.MyCustomMiddleware',
 ]
 
-10) list = [1, 2, 3, 4, 5]
-    print(list[::-1])  o/p: [5, 4, 3, 2, 1]
+10)
+Method:1
+-----------
+list = [1, 2, 3, 4, 5]
+print(list[::-1])  o/p: [5, 4, 3, 2, 1]
+
+Method:2
+---------
+string="Gopal"
+reversed_string = ''.join(reversed(string))
+print(reversed_string)
 
 11) What is Django ORM ?
 Definition:
