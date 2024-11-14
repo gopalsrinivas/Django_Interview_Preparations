@@ -1,4 +1,27 @@
-1) What is shallow copy and deep copy in Python?
+1) What is Decorators ?
+Ans)
+Decorators are functions that modify the behavior of other functions or classes, adding functionality without changing their source code.
+
+syntax:
+---------
+@decorator_name
+
+example:
+------------
+def greet_decorator(func):
+    def wrapper():
+        print("Hello !")
+        func()
+        print("Good Bye !")
+    return wrapper
+
+@greet_decorator
+def say_name():
+    print("I am Gopal !")
+
+say_name()
+
+2) What is shallow copy and deep copy in Python?
 Ans)
     Shallow copy creates a new object, but does not recursively copy nested objects (it copies references).
     Deep copy creates a new object and recursively copies all objects, including nested ones.
@@ -27,28 +50,240 @@ Example:
     print("Shallow:", shallow)   # Changes in nested list reflect here
     print("Deep:", deep)         # Deep copy remains unaffected
 
-
-2) Can you explain the difference between shallow copy and deep copy in Python?
+3) Can you explain the difference between shallow copy and deep copy in Python?
 Ans) 
     Shallow Copy:
-        Creates a new object.
-        Inserts references to the same elements as the original.
-        Changes in mutable elements affect both copies.
+        1. Copies the outer object, but not nested objects (references original nested objects).
+        2. Uses copy() method or copy.copy() function.
+        3. Changes to mutable nested objects affect the original object.
     Deep Copy:
-        Creates a new object.
-        Recursively copies all objects found in the original.
-        New object is independent of the old one.
+        1. Copies both the outer object and all nested objects (recursively).
+        2. Uses copy.deepcopy() function.
+        3. Changes to nested objects do not affect the original object.
 
-3) What is Global Interpreter Lock (GIL) 
+4) What is Global Interpreter Lock (GIL) 
 Ans) 
    Global Interpreter Lock (GIL) is a mechanism used in Python to synchronize the execution of threads.
    It ensures that only one thread can execute Python bytecode at a time, even on multi-core processors
 
-4) What is indexing in database?
+5) What is indexing in database?
 Ans) Indexing in a database is a data structure technique used to quickly locate
      and access data without having to search every row in a table, improving query performance.
 
-5) what is Garbage collection
+6) what is Garbage collection
 Ans)
     Garbage collection is the process of automatically reclaiming memory that is no longer in use by a program.
     It helps prevent memory leaks, optimize memory usage, and ensure efficient memory allocation for the program.
+
+7) What is the Python map() function?
+Ans) The map() function executes a specified function for each item in a given iterable (list, tuple etc). 
+         The item is sent to the function as a parameter.
+Syntax:
+---------
+map(function, iterable)
+parameters:
+-----------
+function: It is a function in which a map passes each item of the iterable.
+iterable: It is a sequence, collection or an iterator object which is to be mapped.
+Example:
+-----------
+# Python example program for map() function
+
+def Square(n):
+    return n**2
+numbers = [10, 20, 30, 40, 50, 60]
+result = map(Square, numbers)
+print(list(result));  # o/p: [100, 400, 900, 1600, 2500, 3600]
+
+8) What is Python Lambda ?
+Ans) A Lambda function is small anonymous function.
+      A Lambda function can take any number of arguments but can only have one expression. 
+      syntax: lambda argument:expression
+      -------
+      Example:
+      ----------
+      add = lambda x, y: x + y
+      result = add(3, 5)
+      print(result)
+
+9) Reversed method
+Ans) 
+# Method:1
+---------
+string = "Gopal"
+reversed_string = "".join(reversed(string))
+print(reversed_string)
+
+# Method:1.1
+---------
+string = "Gopal"
+reversed_string = ""
+for char in string:
+    reversed_string = char + reversed_string
+print(reversed_string)
+
+# Method:2
+---------
+num = [1, 2, 3, 4, 5]
+reversed_num = "".join(map(str, reversed(num)))
+print(list(reversed_num))
+
+# Method: 2.1
+------------
+num = [1, 2, 3, 4, 5]
+reversed_num = []
+for i in range(len(num)-1, -1, -1):  # Start from the last index and go backwards
+    reversed_num.append(num[i])  # Append the elements to the new list
+print(reversed_num)
+
+10) Program to display the Fibonacci sequence up to n-th term
+Ans)
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+
+# Input the number of terms
+n = int(input("Enter the number of terms: "))
+fibonacci(n)
+
+o/p:
+-----
+Enter Number : 9
+Fibonacci Series: 0 1 1 2 3 5 8 13 21 
+
+11)list comprehension in Python
+Ans)
+Square_num = [x*x for x in range(1,11)]
+print(Square_num)  o/p: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+12) What is generator in python ?
+Ans)
+A generator in Python is a function that returns an iterator, which yields a sequence of values one at a time using the yield keyword.
+
+Example:
+------------
+def count_up_to(n):
+    count = 1
+    while count <= n:
+        yield count
+        count += 1
+
+# Get dynamic input from the user
+n = int(input("Enter the value of n: "))
+gen = count_up_to(n)
+print(list(gen))         # Output: [1, 2, 3, ..., n]
+
+13) What is Multi-Threading in python ?
+Ans) 
+Multi-threading in Python is a concurrent execution technique that allows multiple threads to run
+ in parallel within a single process, improving the efficiency of I/O-bound tasks.
+ Benefits to using multithreading in Python:
+    1. Improved performance
+    2. Increased responsiveness
+    3. Improved resource utilization
+
+14) Difference Between Array and List in Python
+Ans)
+List
+-------
+1. The list can store the value of different types.
+2. The list cannot handle the direct arithmetic operations. 
+3. We need to import the array before work with the array. 
+4. The lists are less compatible than the array to store the data.
+5. It consumes a large memory.
+6. We can print the entire list using explicit looping. 
+
+Arrays
+------
+1. It can only consist of value of same type.
+2. It can directly handle arithmetic operations.
+3. The lists are the build-in data structure so we don't need to import it.
+4. An array are much compatible than the list.
+5. It is a more compact in memory size comparatively list.
+6. wE can print the entire list without using explicit looking.
+
+15) Difference Between List and Tuple
+Ans
+---
+List
+------
+• Lists are mutable i.e they can be edited.
+• Lists are slower than tuples.
+• Lists Consume more memory.
+• Lists have several built-in methods
+• The List is better for performing operations, such as insertion and deletion
+• Syntax: list_1 = [10, ‘Chelsea’, 20]
+
+Tuple
+------
+• Tuples are immutable (tuples are lists which can't be edited).
+• Tuples are faster than list.
+• Tuple consumes less memory
+• Tuple does not have many built-in methods
+• Tuple data type is well-suited for element access.
+• Syntax: tup_1 = (10, "Chelsea", 20)
+
+16) What is difference between mutable and immutable objects
+Mutable
+--------
+• Mutable Can be modified after creation.
+• Mutable slower to access
+• Mutable consumes more memory due to mutability.
+• Dictionary, Sets, Lists
+
+  Example:
+  --------
+    Dictionary : 
+    -------------
+        country_capitals = {
+            "United States": "Washington D.C.", 
+            "Italy": "Rome", 
+            "England": "London"
+        }
+   
+    Sets : 
+    -------
+      my_set = {1,2,3,4,5,6}
+      print(my_set)
+      o/p: {1,2,3,4,5,6}
+
+    List :
+    -------
+      age = [1,2,3,4,5,6]
+      print(age)
+      o/p : [1,2,3,4,5,6] 
+   
+Immutable
+----------
+• Immutable Cannot be modified after creation.
+• Immutable quicker to access
+• Immutable consumes less memory.
+• str, tuple,Int,float, bool, frozenset, bytes
+
+    > Lists,tuple,str,bytes = Ordered
+    > Dictionary,Sets,frozenset = Unordered
+
+17) Difference between SQL and NOSQL 
+SQL
+-------
+• SQL databases are categorized as Relational Database Management System (RDBMS).
+• SQL databases have fixed or static or predefined schema.
+• SQL databases are vertically scalable.
+• SQL databases display data in form of tables so it is known as table-based database.
+• SQL databases are best suited for complex queries.
+• MySQL, Oracle, Sqlite, PostgreSQL and MS-SQL etc. are the example of SQL database.
+
+NOSQL
+-------
+• NoSQL databases are categorized as Non-relational or distributed database system
+• NoSQL databases have dynamic schema.
+• NoSQL databases are horizontally scalable.
+• NoSQL databases display data as collection of key-value pair, documents, graph databases or wide-column stores.
+• NoSQL databases are not so good for complex queries because these are not as powerful as SQL queries.
+• MongoDB, BigTable, Redis, RavenDB, Cassandra, Hbase, Neo4j, CouchDB etc. are the example of nosql database
+
+18) What is a Python interpreter ?
+Ans) The Python interpreter is a program that reads and executes Python code line by line,
+      converting it into machine code for the computer to understand and execute.
