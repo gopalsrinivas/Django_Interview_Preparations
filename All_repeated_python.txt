@@ -1,0 +1,54 @@
+1) What is shallow copy and deep copy in Python?
+Ans)
+    Shallow copy creates a new object, but does not recursively copy nested objects (it copies references).
+    Deep copy creates a new object and recursively copies all objects, including nested ones.
+
+Example:
+--------
+    import copy
+
+    # Original list with nested list
+    original = [1, 2, [3, 4]]
+    
+    # Shallow copy
+    shallow = copy.copy(original)
+    
+    # Deep copy
+    deep = copy.deepcopy(original)
+    
+    # Modifying the nested list in shallow copy
+    shallow[2][0] = 99
+    
+    # Modifying the nested list in deep copy
+    deep[2][0] = 88
+    
+    # Output to show the differences
+    print("Original:", original) # Shallow copy affects this
+    print("Shallow:", shallow)   # Changes in nested list reflect here
+    print("Deep:", deep)         # Deep copy remains unaffected
+
+
+2) Can you explain the difference between shallow copy and deep copy in Python?
+Ans) 
+    Shallow Copy:
+        Creates a new object.
+        Inserts references to the same elements as the original.
+        Changes in mutable elements affect both copies.
+    Deep Copy:
+        Creates a new object.
+        Recursively copies all objects found in the original.
+        New object is independent of the old one.
+
+3) What is Global Interpreter Lock (GIL) 
+Ans) 
+   Global Interpreter Lock (GIL) is a mechanism used in Python to synchronize the execution of threads.
+   It ensures that only one thread can execute Python bytecode at a time, even on multi-core processors
+
+4) What is indexing in database?
+Ans) Indexing in a database is a data structure technique used to quickly locate
+     and access data without having to search every row in a table, improving query performance.
+
+5) what is Garbage collection
+Ans)
+    Garbage collection is the process of automatically reclaiming memory that is no longer in use by a program.
+    It helps prevent memory leaks, optimize memory usage, and ensure efficient memory allocation for the program.
