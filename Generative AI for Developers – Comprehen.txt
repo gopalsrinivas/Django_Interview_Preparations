@@ -1,0 +1,206 @@
+https://youtu.be/F0GQ0l2NfHA?si=V9uwJ9dlQctX78i6
+
+What is LLMs
+-------------
+Large Language Models (LLMs) are foundational machine learning models that use deep learning
+algorithms to process and understand natural language. These models are trained on massive amounts
+of text data to learn patterns and entity relationships in the language.
+
+It is a language model which is responsible for performing task such as text to text generation , text to
+image generation and image to text generations.
+
+What makes LLM so Prowerful?
+---------------------------------
+In case of LLM, one model can be used for a whole variety of tasks like:-
+Text generation, Chatbot, summarizer, translation, code generation
+& so on ...
+So, LLM is subset of Deep Learning & it has some properties merge with
+Generative Al
+
+Why LLM so Powerful?
+--------------------
+Train the model for a specific task
+
+Sentiment Analysis
+    My experience so far has been fantastic! ==> POSITIVE
+    The product is ok I guess ==> NEUTRAL
+    Your support team is useless ==> NEGATIVE
+
+Few milestone in large language model:
+--------------------------------------
+1. Gemini
+2. GPT
+3. XLM
+4. T5
+5. Llama
+6. Mistral
+7. Falcon
+
+Generative Ai ==> End to end Pipeline
+--------------------------------------
+End to end Generative AI Pipeline:
+----------------------------------
+Generative AI pipeline is a set of steps followed to build an end to end GenAI
+software
+
+Break the problem down into several sub-problems, then try to develop a step-by-step
+procedure to solve them. Since language processing is involved, we would also list all
+the forms of text processing needed at each step. This step-by-step processing of text is
+known as a pipeline.
+
+Generative AI Pipeline:
+-----------------------
+1. Data acquisition
+2. Data Preparation
+3. Feature engineering
+4. Modeling
+5. Evaluation
+6. Deployment
+7. Monitoring and model updating
+
+Data acquisition:
+--------------------
+=> Available data (csv, txt, pdf, does,xlsx)
+=> Other data(DB, internet, API, Scraping)
+=> No data (create your own data)
+     => llm(openAI api)
+
+Data Preparation
+------------------
+=> cleanup: Html, emoji, spelling connection
+=> Basic preprocessing
+          => Tokenization ==> Sentence,word
+    optional Preprocessing
+        => Stop word 
+        => Staming => less used
+        => Lamatization => More used
+        => prnetations
+        => Lower case
+        => Language deteations
+=> Advance preprocessing
+
+3. Feature engineering
+--------------------------
+=> Text vectorization
+        => TFIDF
+        => Bug of Wong
+        =>
+
+4. Modeling
+-------------
+=> Choose diff => Open source LLM
+               => Paid Model
+                    => Open AI
+             
+5. Evaluation
+-------------
+1. Intinisive  -> Metring -> GenAI Eng
+2. Extninsive -> Deployemant
+
+6. Monitoring and model updating
+-----------------------------------
+
+
+Generative AI => Data Preprocessing
+------------------------------------
+
+Generative AI => Data Representation
+------------------------------------
+
+
+What is LLMs?
+--------------
+A large Language model is a trained deep learning model that understands and
+generate text in a human like fashion.
+LLMs are good at Understanding and generating human language
+
+Why we call it Large Language model?
+-----------------------------------------
+Because of the size and complexity of the Neural Network as well as the size of the
+dataset that it was trained on.
+Researchers started to make these models large and trained on huge datasets
+That they started showing impressive results like understanding complex Natural
+Language and generating language more eloquently than ever.
+
+Few milestone in large language model
+--------------------------------------
+Gemini: was developed by Google
+GPT: GPT stands for "Generative Pre-trained Transformer".The model was developed by OpenAI
+XLM: Cross-lingual Language Model Pretraining by Guillaume Lample, Alexis Conneau.
+Llama: It was created by Meta Al
+Megatron: Megatron is a large, powerful transformer developed by the Applied Deep Learning
+Research team at NVIDIA
+M2M-100: multilingual encoder-decoder (seq-to-seq) model researchers at Facebook
+
+OpenAI Based LLM models:
+--------------------------
+
+MODELS         DESCRIPTION
+---------      -------------
+GPT-4          A set of models that improve on GPT-3.5 and can understand as well as generate natural language or code
+GPT-3.5        A set of models that improve on GPT-3 and can understand as well as generate natural language or code
+GPT base       A set of models without instruction following that can understand as well as generate natural language or code
+DALL.E         A model that can generate and edit images given a natural language prompt
+Whisper        A model that can convert audio into text
+Embeddings     A set of models that can convert text into a numerical form
+Moderation     A fine-tuned model that can detect whether text may be sensitive or unsafe
+GPT-3 Legacy   A set of models that can understand and generate natural language
+
+
+Other Open Source Models
+-------------------------
+Mistral
+Llama
+Gemini
+Falcon
+Claude
+MPT-30B
+Stablelm
+
+So on ....
+
+What can LLMs be used for?
+----------------------------
+Text Classification
+Text Generation
+Text Summarization
+Conversation Al like chatbot, Question Answering
+Speech recognition and Speech identification
+Spelling Corrector
+
+So on......
+
+Few Shot Learning
+---------------------
+In addition, to Just providing an instruction it can be helpful to show
+the model what you want by adding examples this is called few shotl
+learning because we showed the model a few examples
+Like here is a prompt for translating from English to French
+First, we provide an instruction as shown below
+Convert the text from English to French
+Then we give some examples establishing the text pattern
+
+
+Generative AI == In depth Intuition of Transformer
+---------------------------------------------------
+
+Generative AI == How ChatGPT is Trained
+---------------------------------------
+
+How ChatCPT was trained?
+----------------------------
+Internally using a LLM which is gpt-3.5 or gpt-4
+It has trained on a large amount of data which is available all over the internet.
+
+1.Generative pre-training
+2.Supervised fine-tuning
+3.Reinforcement learning
+
+Generative AI == Hugging Face
+----------------------------
+1.pipeline
+2. NLP tasks
+3. Tokenization
+4. Datasets and spaees
+5. Fine Tunning LLM
+6. projects

@@ -835,7 +835,38 @@ Ans)
         Before each request.
         After each request.
 
-84) Can you explain the difference between shallow copy and deep copy in Python?
+
+84) what is shallow copy and deep copy in Python?
+Ans)
+    Shallow copy creates a new object, but does not recursively copy nested objects (it copies references).
+    Deep copy creates a new object and recursively copies all objects, including nested ones.
+
+Example:
+--------
+    import copy
+
+    # Original list with nested list
+    original = [1, 2, [3, 4]]
+    
+    # Shallow copy
+    shallow = copy.copy(original)
+    
+    # Deep copy
+    deep = copy.deepcopy(original)
+    
+    # Modifying the nested list in shallow copy
+    shallow[2][0] = 99
+    
+    # Modifying the nested list in deep copy
+    deep[2][0] = 88
+    
+    # Output to show the differences
+    print("Original:", original) # Shallow copy affects this
+    print("Shallow:", shallow)   # Changes in nested list reflect here
+    print("Deep:", deep)         # Deep copy remains unaffected
+
+
+85) Can you explain the difference between shallow copy and deep copy in Python?
 Ans) 
     Shallow Copy:
         Creates a new object.
@@ -846,7 +877,12 @@ Ans)
         Recursively copies all objects found in the original.
         New object is independent of the old one.
 
-85)How does the Global Interpreter Lock (GIL) affect multi-threading in Python?
+86) What is Global Interpreter Lock (GIL) 
+Ans) 
+   Global Interpreter Lock (GIL) is a mechanism used in Python to synchronize the execution of threads.
+   It ensures that only one thread can execute Python bytecode at a time, even on multi-core processors
+
+87)How does the Global Interpreter Lock (GIL) affect multi-threading in Python?
 Ans)
     Global Interpreter Lock (GIL):
         A mutex that ensures only one thread executes Python bytecodes at a time.
@@ -857,7 +893,7 @@ Ans)
         Less of an issue since threads can be released while waiting for I/O operations.
         Allows better concurrency during I/O waits.
 
-86)What are Python’s context managers, and how are they implemented?
+88)What are Python’s context managers, and how are they implemented?
 Ans)Definition:
         Context managers manage resources (e.g., files, connections) efficiently.
     Implementation:
@@ -866,7 +902,7 @@ Ans)Definition:
         Created by defining __enter__ and __exit__ methods.
         Alternatively, use the @contextmanager decorator from the contextlib module.
 
-87) How do you handle exceptions in Python, and what is the finally clause used for?
+89) How do you handle exceptions in Python, and what is the finally clause used for?
 Ans) 
     Exception Handling:
         Use try to enclose code that may raise exceptions.
@@ -875,7 +911,7 @@ Ans)
         Executes code regardless of exceptions.
         Typically used for cleanup tasks (e.g., closing files, releasing resources).
 
-88) Can you explain what Python’s asyncio library is and how it differs from traditional multi-threading?
+90) Can you explain what Python’s asyncio library is and how it differs from traditional multi-threading?
 Ans)
     Asyncio Library:
         Used for writing concurrent code with async and await.
@@ -885,7 +921,7 @@ Ans)
         Control Yielding: Tasks yield control during I/O-bound operations, avoiding pre-emption.
         Ideal for I/O-bound apps: More efficient for applications like web servers.
 
-89) What are metaclasses in Python, and when would you use one?
+91) What are metaclasses in Python, and when would you use one?
 Ans)Metaclasses:
         Classes of classes; define behavior of class objects.
     Usage:
