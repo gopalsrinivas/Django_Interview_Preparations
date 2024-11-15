@@ -300,3 +300,23 @@ NOSQL
 18) What is a Python interpreter ?
 Ans) The Python interpreter is a program that reads and executes Python code line by line,
       converting it into machine code for the computer to understand and execute.
+
+19) Difference between for Django, FastAPI, and Flask
+Ans)
+Django:
+-------
+    1) Moderate due to synchronous request handling
+    2) Full-stack applications, monolithic architectures
+    3) Built-in Forms and Models for validation
+
+FastAPI:
+--------
+    1) High, due to asynchronous support (ASGI)
+    2) High-performance APIs, microservices
+    3) Pydantic for robust data validation
+
+Flask:
+------
+    1) Moderate, synchronous by default
+    2) Lightweight web applications, microservices
+    3) Limited built-in; needs libraries like WTForms
