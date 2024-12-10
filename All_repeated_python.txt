@@ -117,11 +117,16 @@ print(reversed_string)
 
 # Method:1.1
 --------------
-string = "Gopal"
-reversed_string = ""
-for char in string:
-    reversed_string = char + reversed_string
-print(reversed_string)
+def reverse(text):
+    s = ""
+    l = len(text)
+    for i in range(l):
+        s += text[l - 1 - i]
+    return s
+text = "Gopal"
+print(reverse(text))
+
+output: lapoG
 
 # Method:1.2
 -------------
