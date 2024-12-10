@@ -308,23 +308,37 @@ Ans) The Python interpreter is a program that reads and executes Python code lin
 
 19) Difference between for Django, FastAPI, and Flask
 Ans)
-Django:
+Django: 
 -------
-    1) Moderate due to synchronous request handling
-    2) Full-stack applications, monolithic architectures
-    3) Built-in Forms and Models for validation
-
+Full-stack framework, best for monolithic apps with built-in features like ORM, admin panel, and authentication.
 FastAPI:
 --------
-    1) High, due to asynchronous support (ASGI)
-    2) High-performance APIs, microservices
-    3) Pydantic for robust data validation
-
+High-performance, async support, ideal for modern APIs and microservices with Pydantic for validation.
 Flask:
 ------
-    1) Moderate, synchronous by default
-    2) Lightweight web applications, microservices
-    3) Limited built-in; needs libraries like WTForms
+Lightweight and minimal, suitable for small apps or APIs, requires external libraries for additional features.
+
+20)Example to count the occurrences of each character
+Ans) 
+
+def count_characters(s):
+    count_dict = {}
+    for char in s:
+        if char in count_dict:
+            count_dict[char] += 1
+        else:
+            count_dict[char] = 1
+    return count_dict
+
+string1 = "hello"
+string2 = [1, 2, 4, 4, 6, 7, 2, 9, 1, 3, 3, 5]
+print(count_characters(string1))
+print(count_characters(string2))
+
+Output:
+{'h': 1, 'e': 1, 'l': 2, 'o': 1}
+{1: 2, 2: 2, 4: 2, 6: 1, 7: 1, 9: 1, 3: 2, 5: 1}
+
 
 
 
