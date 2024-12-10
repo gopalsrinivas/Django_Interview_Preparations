@@ -325,3 +325,25 @@ Flask:
     1) Moderate, synchronous by default
     2) Lightweight web applications, microservices
     3) Limited built-in; needs libraries like WTForms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
