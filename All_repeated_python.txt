@@ -64,8 +64,9 @@ Ans)
 
 4) What is Global Interpreter Lock (GIL) 
 Ans) 
-   Global Interpreter Lock (GIL) is a mechanism used in Python to synchronize the execution of threads.
-   It ensures that only one thread can execute Python bytecode at a time, even on multi-core processors
+   GIL is a mutex in CPython that prevents multiple native threads from executing Python bytecodes simultaneously,
+   limiting multi-threaded performance. 
+   Use multiprocessing or asyncio for concurrent tasks.
 
 5) What is indexing in database?
 Ans) Indexing in a database is a data structure technique used to quickly locate
@@ -338,6 +339,11 @@ print(count_characters(string2))
 Output:
 {'h': 1, 'e': 1, 'l': 2, 'o': 1}
 {1: 2, 2: 2, 4: 2, 6: 1, 7: 1, 9: 1, 3: 2, 5: 1}
+
+
+
+
+
 
 
 
