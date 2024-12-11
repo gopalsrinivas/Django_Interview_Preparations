@@ -65,8 +65,8 @@ Ans)
 4) What is Global Interpreter Lock (GIL) 
 Ans) 
    GIL is a mutex in CPython that prevents multiple native threads from executing Python bytecodes simultaneously,
-   limiting multi-threaded performance. 
-   Use multiprocessing or asyncio for concurrent tasks.
+   It limits multi-threaded performance in CPU-bound tasks.
+   For concurrent tasks, use multiprocessing or asyncio to achieve better performance. 
 
 5) What is indexing in database?
 Ans) Indexing in a database is a data structure technique used to quickly locate
