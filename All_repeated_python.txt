@@ -47,9 +47,9 @@ Example:
     deep[2][0] = 88
     
     # Output to show the differences
-    print("Original:", original) # Shallow copy affects this
-    print("Shallow:", shallow)   # Changes in nested list reflect here
-    print("Deep:", deep)         # Deep copy remains unaffected
+    print("Original:", original) # o/p: [1, 2, [99, 4]] # Shallow copy affects this
+    print("Shallow:", shallow)   # o/p: [1, 2, [99, 4]] # Changes in nested list reflect here
+    print("Deep:", deep)         # o/p: [1, 2, [88, 4]] # Deep copy remains unaffected
 
 3) Can you explain the difference between shallow copy and deep copy in Python?
 Ans) 
