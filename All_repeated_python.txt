@@ -22,6 +22,12 @@ def say_name():
 
 say_name()
 
+Output:
+-------
+Hello !
+I am Gopal !
+Good Bye !
+
 Example: 2
 -----------
 import time
@@ -45,6 +51,10 @@ def slow_function():
 # Call the decorated function
 slow_function()
 
+Output:
+-------
+Function executed
+slow_function executed in 2.0002 seconds
 
 2) What is shallow copy and deep copy in Python?
 Ans)
