@@ -7,7 +7,7 @@ syntax:
 ---------
 @decorator_name
 
-example:
+example: 1
 ------------
 def greet_decorator(func):
     def wrapper():
@@ -21,6 +21,30 @@ def say_name():
     print("I am Gopal !")
 
 say_name()
+
+Example: 2
+-----------
+import time
+
+# Decorator to measure execution time of a function
+def timing_decorator(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()  # Record the start time
+        result = func(*args, **kwargs)  # Execute the original function
+        end_time = time.time()  # Record the end time
+        print(f"{func.__name__} executed in {end_time - start_time:.4f} seconds")  # Print execution time
+        return result  # Return the function result
+    return wrapper
+
+# Apply the decorator to measure execution time
+@timing_decorator
+def slow_function():
+    time.sleep(2)  # Simulate a slow operation
+    print("Function executed")
+
+# Call the decorated function
+slow_function()
+
 
 2) What is shallow copy and deep copy in Python?
 Ans)
@@ -343,19 +367,10 @@ Output:
 Ans) 
 def decimal_to_roman(decimal):
     roman_numerals = [
-        (1000, 'M'),
-        (900, 'CM'),
-        (500, 'D'),
-        (400, 'CD'),
-        (100, 'C'),
-        (90, 'XC'),
-        (50, 'L'),
-        (40, 'XL'),
-        (10, 'X'),
-        (9, 'IX'),
-        (5, 'V'),
-        (4, 'IV'),
-        (1, 'I')
+        (1000, 'M'), (900, 'CM'), (500, 'D'),
+        (400, 'CD'), (100, 'C'), (90, 'XC'),
+        (50, 'L'),(40, 'XL'),(10, 'X'),
+        (9, 'IX'), (5, 'V'),(4, 'IV'), (1, 'I') 
     ]
 
     roman = ""
@@ -363,7 +378,6 @@ def decimal_to_roman(decimal):
         while decimal >= value:
             roman += numeral
             decimal -= value
-
     return roman
 
 # Get user input
