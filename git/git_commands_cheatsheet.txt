@@ -1,56 +1,91 @@
 🔰 Basic Git Commands
 ----------------------
-git init                 # Initializes a new Git repository
-git clone <url>          # Clones a repository from a remote source
-git status               # Shows the working directory status
-git add <file>           # Adds file(s) to the staging area
-git add .                # Adds all files to staging
-git commit -m "message"  # Commits changes with a message
-git push                 # Pushes commits to remote repository
-git pull                 # Fetches and merges from remote repo
-git fetch                # Only downloads changes from remote
+git init                                # Initializes a new Git repository
+git clone <url>                         # Clones a repository from a remote source
+git status                              # Shows the working directory status
+git add <file>                          # Adds file(s) to the staging area
+git add .                               # Adds all files to staging
+git commit -m "message"                 # Commits changes with a message
+git push                                # Pushes commits to remote repository
+git pull                                # Fetches and merges from remote repo
+git fetch                               # Only downloads changes from remote
+git config --global user.name "Name"    # Sets your username globally
+git config --global user.email "email"  # Sets your email globally
+git rm <file>                           # Removes file from working directory and staging
+git mv <old> <new>                      # Renames/moves a file
 
 🧭 Branching
 -------------
-git branch                        # Lists all local branches
-git branch <branch-name>          # Creates a new branch
-git checkout <branch-name>        # Switches to a branch
-git checkout -b <branch-name>     # Creates and switches to a new branch
-git merge <branch-name>           # Merges a branch into current branch
-git branch -d <branch-name>       # Deletes a branch locally
-git push origin --delete <branch> # Deletes a branch remotely
+git branch                         # Lists all local branches
+git branch <branch-name>           # Creates a new branch
+git checkout <branch-name>         # Switches to a branch
+git checkout -b <branch-name>      # Creates and switches to a new branch
+git merge <branch-name>            # Merges a branch into current branch
+git branch -d <branch-name>        # Deletes a branch locally
+git push origin --delete <branch>  # Deletes a branch remotely
+git branch -m <new-name>           # Renames current branch
+git branch -a                      # Lists ALL branches (local + remote)
+git checkout -                     # Switches to previous branch
 
 🔁 Undo/Reset Commands
 -----------------------
-git reset                  # Resets staging area
-git reset --hard           # Resets both staging and working directory
-git revert <commit>        # Reverts a specific commit
-git checkout -- <file>     # Discards changes in file
-git clean -fd              # Removes untracked files and directories
+git reset                          # Resets staging area
+git reset --hard                   # Resets both staging and working directory
+git revert <commit>                # Reverts a specific commit
+git checkout -- <file>             # Discards changes in file
+git clean -fd                      # Removes untracked files and directories
+git reset <commit>                 # Moves HEAD to specified commit (keeps changes)
+git reset --soft <commit>          # Moves HEAD, keeps changes in staging
+git restore <file>                 # Discards changes in working directory (new)
+git restore --staged <file>        # Unstages file while keeping changes
 
 📂 Remote Repository
 ---------------------
-git remote -v                # Lists remote URLs
-git remote add origin <url>  # Adds a remote repo
-git push -u origin <branch>  # Pushes and sets upstream branch
-git remote remove origin     # Removes a remote repo
+git remote -v                      # Lists remote URLs
+git remote add origin <url>        # Adds a remote repo
+git push -u origin <branch>        # Pushes and sets upstream branch
+git remote remove origin           # Removes a remote repo
+git remote show origin             # Shows detailed remote info
+git remote rename <old> <new>      # Renames a remote
+git push origin :<branch>          # Alternate way to delete remote branch
 
 📜 Logs and Info
 -----------------
-git log            # Shows commit history
-git log --oneline  # Shows compact history
-git diff           # Shows unstaged changes
-git show <commit>  # Shows details of a commit
+git log                           # Shows commit history
+git log --oneline                 # Shows compact history
+git diff                          # Shows unstaged changes
+git show <commit>                 # Shows details of a commit
+git log --graph --oneline --all   # Visual branch history
+git log -p                        # Shows patch (diff) for each commit
+git diff --cached                 # Shows staged changes
+git blame <file>                  # Shows who changed each line
+git reflog                        # Shows ALL reference changes
 
 💡 Stashing
 ------------
-git stash        # Saves uncommitted changes
-git stash apply  # Applies stashed changes
-git stash pop    # Applies and removes latest stash
-git stash list   # Lists stashed changes
+git stash                         # Saves uncommitted changes
+git stash apply                   # Applies stashed changes
+git stash pop                     # Applies and removes latest stash
+git stash list                    # Lists stashed changes
+git stash save "message"          # Stashes with description
+git stash drop                    # Deletes latest stash
+git stash clear                   # Deletes ALL stashes
 
 🧪 Tagging
 -----------
-git tag                   # Lists tags
-git tag <tagname>         # Creates a new tag
-git push origin <tagname> # Pushes tag to remote
+git tag                          # Lists tags
+git tag <tagname>                # Creates a new tag
+git push origin <tagname>        # Pushes tag to remote
+git tag -a <tagname> -m "msg"    # Creates annotated tag
+git tag -d <tagname>             # Deletes tag locally
+git push --tags                  # Pushes ALL tags
+git push origin --delete <tagname> # Deletes remote tag
+
+⚡ Advanced Commands
+--------------------
+git rebase <branch>              # Reapplies commits on top of another branch
+git bisect                       # Binary search to find bug-introducing commit
+git cherry-pick <commit>         # Applies specific commit to current branch
+git worktree add ../path branch  # Creates linked working tree
+git submodule add <repo> <path>  # Adds a submodule
+git gc                           # Garbage collection cleanup
