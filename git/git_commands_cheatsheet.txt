@@ -6,9 +6,9 @@ git status                              # Shows the working directory status
 git add <file>                          # Adds file(s) to the staging area
 git add .                               # Adds all files to staging
 git commit -m "message"                 # Commits changes with a message
-git push origin main                    # Pushes commits to remote repository
-git pull origin main                    # Fetches and merges from remote repo
-git fetch origin main                   # Only downloads changes from remote
+git push origin <branch-name>           # Pushes commits to remote repository
+git pull origin <branch-name>           # Fetches and merges from remote repo
+git fetch origin <branch-name>          # Only downloads changes from remote
 git config --global user.name "Name"    # Sets your username globally
 git config --global user.email "email"  # Sets your email globally
 git rm <file>                           # Removes file from working directory and staging
