@@ -1,0 +1,56 @@
+🔰 Basic Git Commands
+----------------------
+git init                 # Initializes a new Git repository
+git clone <url>          # Clones a repository from a remote source
+git status               # Shows the working directory status
+git add <file>           # Adds file(s) to the staging area
+git add .                # Adds all files to staging
+git commit -m "message"  # Commits changes with a message
+git push                 # Pushes commits to remote repository
+git pull                 # Fetches and merges from remote repo
+git fetch                # Only downloads changes from remote
+
+🧭 Branching
+-------------
+git branch                        # Lists all local branches
+git branch <branch-name>          # Creates a new branch
+git checkout <branch-name>        # Switches to a branch
+git checkout -b <branch-name>     # Creates and switches to a new branch
+git merge <branch-name>           # Merges a branch into current branch
+git branch -d <branch-name>       # Deletes a branch locally
+git push origin --delete <branch> # Deletes a branch remotely
+
+🔁 Undo/Reset Commands
+-----------------------
+git reset                  # Resets staging area
+git reset --hard           # Resets both staging and working directory
+git revert <commit>        # Reverts a specific commit
+git checkout -- <file>     # Discards changes in file
+git clean -fd              # Removes untracked files and directories
+
+📂 Remote Repository
+---------------------
+git remote -v                # Lists remote URLs
+git remote add origin <url>  # Adds a remote repo
+git push -u origin <branch>  # Pushes and sets upstream branch
+git remote remove origin     # Removes a remote repo
+
+📜 Logs and Info
+-----------------
+git log            # Shows commit history
+git log --oneline  # Shows compact history
+git diff           # Shows unstaged changes
+git show <commit>  # Shows details of a commit
+
+💡 Stashing
+------------
+git stash        # Saves uncommitted changes
+git stash apply  # Applies stashed changes
+git stash pop    # Applies and removes latest stash
+git stash list   # Lists stashed changes
+
+🧪 Tagging
+-----------
+git tag                   # Lists tags
+git tag <tagname>         # Creates a new tag
+git push origin <tagname> # Pushes tag to remote
