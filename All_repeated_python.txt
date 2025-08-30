@@ -213,20 +213,24 @@ print(Square_num)  o/p: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 12) What is generator in python ?
 Ans)
-A generator in Python is a function that returns an iterator, which yields a sequence of values one at a time using the yield keyword.
+A generator is a function that uses yield to return values one at a time, pausing and resuming when needed.
 
 Example:
 ------------
-def count_up_to(n):
-    count = 1
-    while count <= n:
-        yield count
-        count += 1
+# Example generator that yields numbers one by one
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
 
-# Get dynamic input from the user
-n = int(input("Enter the value of n: "))
-gen = count_up_to(n)
-print(list(gen))         # Output: [1, 2, 3, ..., n]
+# Create generator object
+gen = my_generator()
+
+print(next(gen))  # Output: 1
+print(next(gen))  # Output: 2
+print(next(gen))  # Output: 3
+# If we call next(gen) again -> StopIteration
+
 
 13) What is Multi-Threading in python ?
 Ans) 
